@@ -26,7 +26,7 @@ class QuizSession {
         }
     }
     
-    init() {
+    init(resource: String) {
         questions = [
             Question(
                 caption: "2+2",
@@ -47,9 +47,24 @@ class QuizSession {
         
         currentIndex = -1
         _score = 0
+
+        let url = URL(string: "/Users/toufik/Documents/other/misc/sample.json")
+        //TODO: try to read json file
+        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+            print("====")
+            print(data)
+            print("====")
+            let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+            print(json)
+            print("===")
+        }
+    
+        task.resume()
     }
     
     func nextQuestion() -> Question? {
+        
+        
         if currentIndex+1 >= questions.count {
             return nil
         }

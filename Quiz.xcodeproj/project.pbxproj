@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94C3F7BC2031AEB700AA9FAD /* getHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C3F7BB2031AEB700AA9FAD /* getHttp.swift */; };
 		A96EB14B1E66F70800F48F53 /* QuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EB14A1E66F70800F48F53 /* QuizSession.swift */; };
 		CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FCECE1C74A5C800133338 /* AppDelegate.swift */; };
 		CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4FCED01C74A5C800133338 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94C3F7BB2031AEB700AA9FAD /* getHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getHttp.swift; sourceTree = "<group>"; };
 		A96EB14A1E66F70800F48F53 /* QuizSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
 		CF4FCEC91C74A5C800133338 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4FCECD1C74A5C800133338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				CF4FCEF01C74A6B200133338 /* Question.swift */,
 				A96EB14A1E66F70800F48F53 /* QuizSession.swift */,
 				CF4FCED01C74A5C800133338 /* ViewController.swift */,
+				94C3F7BB2031AEB700AA9FAD /* getHttp.swift */,
 				CF4FCED51C74A5C800133338 /* Images.xcassets */,
 				CF4FCED71C74A5C800133338 /* LaunchScreen.xib */,
 				CF4FCED21C74A5C800133338 /* Main.storyboard */,
@@ -202,6 +205,7 @@
 			files = (
 				CF4FCEF11C74A6B200133338 /* Question.swift in Sources */,
 				A96EB14B1E66F70800F48F53 /* QuizSession.swift in Sources */,
+				94C3F7BC2031AEB700AA9FAD /* getHttp.swift in Sources */,
 				CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */,
 				CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */,
 			);

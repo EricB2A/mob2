@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Create our game session, and get the first question
-        session = QuizSession()
+        session = QuizSession(resource: "http://localhost:4567/questions/next")
         nextOne()
         hintLabel.isHidden = true
     }
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func newGameClick(_ sender: UIButton) {
-        session = QuizSession()
+        session = QuizSession(resource: "http://localhost:4567/questions/next")
         nextOne()
         
         answerButton1.isHidden = false
