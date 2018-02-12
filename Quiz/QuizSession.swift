@@ -31,15 +31,18 @@ class QuizSession {
             Question(
                 caption: "2+2",
                 answers: ["1", "2", "4"],
-                correctAnswer: "4"),
+                correctAnswer: "4",
+                hint: "Quick math"),
             Question(
                 caption: "Meaning of life?",
                 answers: ["God", "42", "Me"],
-                correctAnswer: "42"),
+                correctAnswer: "42",
+                hint: "*"),
             Question(
                 caption: "May the Force be with you",
                 answers: ["Star wars", "Forest Gump", "American pie"],
-                correctAnswer: "Star wars")
+                correctAnswer: "Star wars",
+                hint: "Do. Or do not. There is no try.")
         ]
         
         currentIndex = -1
@@ -54,6 +57,10 @@ class QuizSession {
             currentIndex += 1
             return questions[currentIndex]
         }
+    }
+    
+    func getHint() -> String {
+        return questions[currentIndex].hint
     }
     
     func checkAnswer(_ answer: String) -> Bool {

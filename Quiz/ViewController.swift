@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet var answerButton2: UIButton!
     @IBOutlet var answerButton3: UIButton!
     @IBOutlet var newGameButton: UIButton!
+    @IBOutlet weak var hintButton: UIButton!
+    @IBOutlet weak var hintLabel: UILabel!
     
     var session : QuizSession!
 
@@ -25,11 +27,17 @@ class ViewController: UIViewController {
         // Create our game session, and get the first question
         session = QuizSession()
         nextOne()
+        hintLabel.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func callHint(_ sender: Any) {
+        hintLabel.isHidden = false
+        hintLabel.text = "Hint : " + session.getHint()
     }
     
     @IBAction func answerClick(_ sender: UIButton) {
@@ -51,6 +59,7 @@ class ViewController: UIViewController {
     }
     
     func nextOne() {
+        hintLabel.isHidden = true
         // get the next question from the session
         if let question = session.nextQuestion() {
             // Set the captions
