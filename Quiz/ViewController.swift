@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Create our game session, and get the first question
-        session = SimpleQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
+        session = JourneymanQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
         nextOne()
     }
 

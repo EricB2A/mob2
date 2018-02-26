@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940BF0D22044171F00BED21A /* JourneymanQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BF0D12044171F00BED21A /* JourneymanQuizSession.swift */; };
 		A96EB14D1E67014600F48F53 /* QuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EB14C1E67014600F48F53 /* QuizSession.swift */; };
 		A9FBA1981E81191C007DCBF2 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */; };
 		A9FBA1991E81191C007DCBF2 /* SimpleQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBA1961E81191C007DCBF2 /* SimpleQuizSession.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940BF0D12044171F00BED21A /* JourneymanQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneymanQuizSession.swift; sourceTree = "<group>"; };
 		A96EB14C1E67014600F48F53 /* QuizSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
 		A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		A9FBA1961E81191C007DCBF2 /* SimpleQuizSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleQuizSession.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				CF4FCED71C74A5C800133338 /* LaunchScreen.xib */,
 				CF4FCED21C74A5C800133338 /* Main.storyboard */,
 				CF4FCECC1C74A5C800133338 /* Supporting Files */,
+				940BF0D12044171F00BED21A /* JourneymanQuizSession.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				A96EB14D1E67014600F48F53 /* QuizSession.swift in Sources */,
 				A9FBA19C1E811A6D007DCBF2 /* RemoteQuestionRepository.swift in Sources */,
 				CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */,
+				940BF0D22044171F00BED21A /* JourneymanQuizSession.swift in Sources */,
 				A9FBA1991E81191C007DCBF2 /* SimpleQuizSession.swift in Sources */,
 				A9FBA1981E81191C007DCBF2 /* QuestionRepository.swift in Sources */,
 				CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */,
