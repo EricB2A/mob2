@@ -42,10 +42,14 @@ class QuizSession {
     func checkAnswer(_ answer: String) -> Bool {
         return _currentQuestion.isCorrectAnswer(answer)
     }
-    
-    func timeEnded(timerValue: Int) -> Bool{
-        // 
+
+    func gameTimeEnded(timerValue: Int) -> Bool {
         return false
     }
+    
+    func questionTimeEnded(timerValue: Int) -> Bool {
+        return false
+    }
+    
     
 }

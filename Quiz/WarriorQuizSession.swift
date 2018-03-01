@@ -43,9 +43,11 @@ class WarriorQuizSession : QuizSession {
         return correct
     }
     
-    override func timeEnded(timerValue: Int) -> Bool {
+    override func gameTimeEnded(timerValue: Int) -> Bool {
         return timerValue > 10
     }
+    
+    
     
     
 }

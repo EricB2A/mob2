@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     var session : QuizSession!
-    var counter = 0
+    var globalCounter = 0
+    var questionCounter = 0
     var timer = Timer();
     
     override func viewDidLoad() {
@@ -27,22 +28,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Create our game session, and get the first question
-        session = WarriorQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
+        session = NinjaQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
         nextOne()
         
         // Starts timer
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
- 
-        
     }
     
     func timerAction() {
-        counter += 1
-        timerLabel.text = "\(counter)" // Update timer label
+        globalCounter += 1
+        questionCounter += 1
+        timerLabel.text = "\(questionCounter)" // Update timer label
         
-        if session.timeEnded(timerValue: counter) { // No more time !
+        if session.gameTimeEnded(timerValue: globalCounter) { // No more time !
             endGame()
         }
+        
+        if session.questionTimeEnded(timerValue: questionCounter){
+            nextQuestion(question: session.nextQuestion()!)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,16 +70,21 @@ class ViewController: UIViewController {
         // get the next question from the session
         if let question = session.nextQuestion() {
             // Set the captions
-            questionLabel.text = question.caption
-            hintLabel.text = question.hint
-            answerButton1.setTitle(question.answers[0], for: UIControlState())
-            answerButton2.setTitle(question.answers[1], for: UIControlState())
-            answerButton3.setTitle(question.answers[2], for: UIControlState())
+            nextQuestion(question: question)
         }
         else {
             // No more questions! This is the end
             endGame();
         }
+    }
+    
+    func nextQuestion(question: Question){
+        questionCounter = 0
+        questionLabel.text = question.caption
+        hintLabel.text = question.hint
+        answerButton1.setTitle(question.answers[0], for: UIControlState())
+        answerButton2.setTitle(question.answers[1], for: UIControlState())
+        answerButton3.setTitle(question.answers[2], for: UIControlState())
     }
     
     func endGame(){
@@ -85,6 +95,7 @@ class ViewController: UIViewController {
         hintButton.isHidden = true
         timerLabel.isHidden = true
         questionLabel.text = "GAME OVER\nyour score: \(session.score) / \(session.questionsCount)"
+        timer.invalidate()
     }
     
     @IBAction func hintClick(_ sender: UIButton) {
