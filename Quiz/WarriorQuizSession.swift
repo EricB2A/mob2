@@ -12,19 +12,15 @@ class WarriorQuizSession : QuizSession {
     var _currentQuestionCount: Int
     var _wasCorrect: Bool
     var _lastQuestion: Question!
-    var timer: Timer
     
     init(questionRepository: QuestionRepository){
         _currentQuestionCount = 0
         _wasCorrect = true
-        timer = Timer.scheduledTimer(TimeInterval: 1, repeats: true, target: self, selector: #selector(self.update))
         
         super.init(questionRepository: questionRepository, totalQuestionCount: 15)
     }
     
     override func nextQuestion() -> Question? {
-        print("timer tamer");
-        print(timer.timeInterval)
         _currentQuestionCount += 1
         if _currentQuestionCount > _totalQuestionCount {
             return nil
@@ -46,4 +42,10 @@ class WarriorQuizSession : QuizSession {
         }
         return correct
     }
+    
+    override func timeEnded(timerValue: Int) -> Bool {
+        return timerValue > 10
+    }
+    
+    
 }

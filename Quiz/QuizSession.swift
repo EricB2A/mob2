@@ -43,4 +43,9 @@ class QuizSession {
         return _currentQuestion.isCorrectAnswer(answer)
     }
     
+    func timeEnded(timerValue: Int) -> Bool{
+        // 
+        return false
+    }
+    
 }

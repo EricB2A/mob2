@@ -16,9 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet var answerButton1: UIButton!
     @IBOutlet var answerButton2: UIButton!
     @IBOutlet var answerButton3: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
     
     var session : QuizSession!
-
+    var counter = 0
+    var timer = Timer();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +29,20 @@ class ViewController: UIViewController {
         // Create our game session, and get the first question
         session = WarriorQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
         nextOne()
+        
+        // Starts timer
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+ 
+        
+    }
+    
+    func timerAction() {
+        counter += 1
+        timerLabel.text = "\(counter)" // Update timer label
+        
+        if session.timeEnded(timerValue: counter) { // No more time !
+            endGame()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,14 +73,18 @@ class ViewController: UIViewController {
         }
         else {
             // No more questions! This is the end
-            answerButton1.isHidden = true
-            answerButton2.isHidden = true
-            answerButton3.isHidden = true
-            hintLabel.isHidden = true
-            hintButton.isHidden = true
-            
-            questionLabel.text = "GAME OVER\nyour score: \(session.score) / \(session.questionsCount)"
+            endGame();
         }
+    }
+    
+    func endGame(){
+        answerButton1.isHidden = true
+        answerButton2.isHidden = true
+        answerButton3.isHidden = true
+        hintLabel.isHidden = true
+        hintButton.isHidden = true
+        timerLabel.isHidden = true
+        questionLabel.text = "GAME OVER\nyour score: \(session.score) / \(session.questionsCount)"
     }
     
     @IBAction func hintClick(_ sender: UIButton) {
