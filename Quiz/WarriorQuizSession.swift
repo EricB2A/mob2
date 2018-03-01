@@ -1,5 +1,5 @@
 //
-//  JourneymanQuizSession.swift
+//  WarriorQuizSession.swift
 //  Quiz
 //
 //  Created by toufik on 26.02.18.
@@ -8,21 +8,25 @@
 
 import Foundation
 
-class JourneymanQuizSession : QuizSession{
+class WarriorQuizSession : QuizSession {
     var _currentQuestionCount: Int
     var _wasCorrect: Bool
     var _lastQuestion: Question!
+    var timer: Timer
     
     init(questionRepository: QuestionRepository){
         _currentQuestionCount = 0
         _wasCorrect = true
+        timer = Timer.scheduledTimer(TimeInterval: 1, repeats: true, target: self, selector: #selector(self.update))
         
-        super.init(questionRepository: questionRepository, totalQuestionCount: 10)
+        super.init(questionRepository: questionRepository, totalQuestionCount: 15)
     }
     
     override func nextQuestion() -> Question? {
+        print("timer tamer");
+        print(timer.timeInterval)
         _currentQuestionCount += 1
-        if _currentQuestionCount > _totalQuestionCount { // no more question or time > 30
+        if _currentQuestionCount > _totalQuestionCount {
             return nil
         }
         if self._wasCorrect == false {
@@ -42,5 +46,4 @@ class JourneymanQuizSession : QuizSession{
         }
         return correct
     }
-    
 }
