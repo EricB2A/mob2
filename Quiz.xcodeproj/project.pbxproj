@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070028D8205140D900CFBFBF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070028D7205140D900CFBFBF /* MenuViewController.swift */; };
 		07BBB832204811A800899223 /* NinjaQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BBB831204811A800899223 /* NinjaQuizSession.swift */; };
 		940BF0D22044171F00BED21A /* JourneymanQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BF0D12044171F00BED21A /* JourneymanQuizSession.swift */; };
 		940BF0D420441D3600BED21A /* WarriorQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940BF0D320441D3600BED21A /* WarriorQuizSession.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070028D7205140D900CFBFBF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ../MenuViewController.swift; sourceTree = "<group>"; };
 		07BBB831204811A800899223 /* NinjaQuizSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinjaQuizSession.swift; sourceTree = "<group>"; };
 		940BF0D12044171F00BED21A /* JourneymanQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneymanQuizSession.swift; sourceTree = "<group>"; };
 		940BF0D320441D3600BED21A /* WarriorQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarriorQuizSession.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				940BF0D12044171F00BED21A /* JourneymanQuizSession.swift */,
 				940BF0D320441D3600BED21A /* WarriorQuizSession.swift */,
 				07BBB831204811A800899223 /* NinjaQuizSession.swift */,
+				070028D7205140D900CFBFBF /* MenuViewController.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				940BF0D420441D3600BED21A /* WarriorQuizSession.swift in Sources */,
 				940BF0D22044171F00BED21A /* JourneymanQuizSession.swift in Sources */,
 				A9FBA1991E81191C007DCBF2 /* SimpleQuizSession.swift in Sources */,
+				070028D8205140D900CFBFBF /* MenuViewController.swift in Sources */,
 				A9FBA1981E81191C007DCBF2 /* QuestionRepository.swift in Sources */,
 				CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */,
 				07BBB832204811A800899223 /* NinjaQuizSession.swift in Sources */,

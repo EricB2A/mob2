@@ -22,10 +22,13 @@ class ViewController: UIViewController {
     var globalCounter = 0
     var questionCounter = 0
     var timer = Timer();
+    var gameMode = "SimpleQuizSession"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("GAME MODE IS ")
+        print(gameMode)
         
         // Create our game session, and get the first question
         session = NinjaQuizSession(questionRepository: RemoteQuestionRepository(remoteUrl: "http://localhost:4567"))
